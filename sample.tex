@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.4, 13 Nov 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{0E1D6A}
+\definecolor{PastelRed}{HTML}{0E1D6A}
+\definecolor{GoldenEarth}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Mohit Gupta}
+\tagline{Senior Engineering Manager, Lowe's India}
+%% You can add multiple photos on the left or right
+\photoR{2.4cm}{mohit.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{mohit.gupta@lowes.com}
+  \phone{+91 888 433 2229}
+%   \mailaddress{Åddrésş, Street, 00000 Cóuntry}
+%   \homepage{www.homepage.com}
+%   \twitter{@twitterhandle}
+  \linkedin{mohitt01}
+  \location{Bengaluru, India}
+  
+%   \github{mohitt01}
+%   \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.7}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Summary}
+\begin{p}
+Senior Engineering Manager with a proven record of delivering enterprise platforms, business solutions and innovative products through software development. Currently leading and managing a global team of 30 high-performing software engineers across different platforms and technology stacks
+\end{p}
+
+\cvsection{Experience}
+
+\cvevent{Senior Engineering Manager}{Enterprise Platforms and Architecture, Lowe's}{Jun 2021 -- Ongoing}{Bengaluru, India}
+\begin{itemize}
+\item Ensured a smooth go-live for Baymax to replace Adobe Test \& Target as the A/B testing tool for lowes.com, supporting \textbf{60+ concurrent tests for 100M+ visits per month}. For the first time in Lowe's, business continued A/B testing during holiday season
+\item Transformed Baymax into a solution for experimentation and feature delivery at-scale \textbf{across the technology stack} - backend, frontend as well as mobile - with support for ReactJS, NodeJS, Java, Kotlin and Swift
+\item Managing the modernization of Lowe's API Gateway Platform by replacing legacy technologies like IBM DataPower, API Connect and Google's Apigee with Hawkeye - a in-house implementation based on Kong, currently supporting 300+ APIs
+\item Ensuring \textbf{business continuity for 1500+ services}, including several P0 and P1 integrations inside as well as outside Lowe's
+% \item The Hawkeye team will be presenting Lowe's success story at the Kong Summit in September, 2022
+\end{itemize}
+
+\cvevent{Engineering Lead}{Enterprise Architecture, Lowe's}{Jun 2020 -- Jun 2021}{Bengaluru, India}
+\begin{itemize}
+\item Designed and implemented Hermes to enable bi-directional data-movement between stores and datacenters and provide data-cohesion along with high-throughput, low-latency access for core retail data
+\item Ensured a smooth rollout of Hermes for 1800+ stores across US and Canada (Rona), enabling modernization of store commerce through 14 business critical services
+\item Worked with the Carbon On-Prem engineering team to design and deliver the MVP Kubernetes operator based platform and ensure a timely pilot release
+\end{itemize}
+
+\cvevent{Lead Engineer/Sr Engineer/Software Engineer}{Enterprise Pricing and Competitive Intelligence, Target}{Jul 2014 -- Jun 2020}{Bengaluru, India}
+\begin{itemize}
+\item Modernized competitive pricing, price management and delivery systems, providing localised price recommendations, configurable price decisioning workflows, enabling \textbf{over 1 million omni-channel price changes per day}
+\item Built an in-house distributed processing solution, designed to be \textbf{server-less} and \textbf{auto-scalable}. Provider over \textbf{10x increase in scale} and over \textbf{80\% reduction} in infrastructure cost from pre-emptible instances
+\item Designed and implemented in-house \textbf{anonymity system} - rapid IP mutation + randomized user-behaviour. Super-effective in navigating advanced bot-detection software, ensured business continuity to monitor \textbf{1+ million competitor mappings} regularly
+\end{itemize}
+
+% \cvsection{Projects}
+
+% \cvevent{Project 1}{Funding agency/institution}{}{}
+% \begin{itemize}
+% \item Details
+% \end{itemize}
+
+% \divider
+
+% \cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+% A short abstract would also work.
+
+% \medskip
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% \wheelchart{1.5cm}{0.5cm}{%
+%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+%   3/8em/accent!40/Hopeful novelist by night,
+%   8/8em/accent!60/Daytime job,
+%   2/10em/accent/Sports and relaxation,
+%   5/6em/accent!20/Spending time with family
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+% \newpage
+
+% \cvsection{Publications}
+
+% \nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+% %% Switch to the right column. This will now automatically move to the second
+% %% page if the content is too long.
+\switchcolumn
+
+\cvsection{Philosophy}
+
+\begin{quote}
+``Best outcomes are achieved through simplicity and iterative continuous improvement''
+\end{quote}
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{Innovation}{Built cutting-edge products with minimum cost}
+
+\divider
+
+\cvachievement{\faChrome}{Technology Modernization}{Transitioning enterprise systems to modern, open-source technology}
+
+\divider
+
+\cvachievement{\faUsers}{Fostering Tech Culture}{Coaching diverse engineering teams across various disciplines in fast paced environment}
+
+\cvsection{Strengths}
+
+\cvtag{Customer Focused}
+\cvtag{Adaptable}\\
+\cvtag{Technical Versatility}\\
+\cvtag{Effective Communicator}\\
+\cvtag{Attention for Detail}
+
+\divider\smallskip
+
+\cvtag{Distributed Systems}
+\cvtag{Open Source}
+\cvtag{Cloud Computing}
+
+% \cvsection{Languages}
+
+% \cvskill{English}{5}
+% \divider
+
+% \cvskill{Spanish}{4}
+% \divider
+
+% \cvskill{German}{3.5} %% Supports X.5 values.
+
+% %% Yeah I didn't spend too much time making all the
+% %% spacing consistent... sorry. Use \smallskip, \medskip,
+% %% \bigskip, \vspace etc to make adjustments.
+% \medskip
+
+\cvsection{Education}
+
+\cvevent{B.Tech in Electrical Engineering}{Indian Institute of Technology, Kanpur}{2010 -- 2014}{}
+Signal Processing, Computer Vision, Natural Language Processing, Machine Learning, Speech Signal Processing, Data Structures, Algorithms
+
+% \divider
+
+% \cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
+
+% \divider
+
+% \cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
+
+% % \divider
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+
+\end{paracol}
+
+
+\end{document}
